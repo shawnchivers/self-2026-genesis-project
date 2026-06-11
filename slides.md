@@ -3,6 +3,7 @@ marp: true
 theme: gaia
 paginate: true
 size: 16:9
+footer: tinyurl.com/self2026gen
 style: |
   :root {
     --color-background: #ffffff;
@@ -95,6 +96,37 @@ style: |
     border-radius: 8px;
   }
 
+  section.software-overview {
+    font-size: 0.88em;
+  }
+
+  section.software-overview .overview-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  section.software-overview h3 {
+    margin: 0.2em 0 0.2em;
+    font-size: 1.02em;
+    color: #004f9e;
+  }
+
+  section.software-overview h3 + h3 {
+    margin-top: 0.9em;
+  }
+
+  section.software-overview ul {
+    margin: 0.1em 0 0.35em;
+    line-height: 1.35;
+    font-size: 0.95em;
+  }
+
+  section.software-overview li {
+    margin-bottom: 0.12em;
+  }
+
   footer {
     color: #6c757d;
     font-size: 0.8em;
@@ -116,22 +148,39 @@ style: |
 
 ---
 
+<!-- _class: software-overview -->
 ## Software Overview
 
-- Core dev:
-  - [SGDK](https://github.com/Stephane-D/SGDK) - MIT
-  - [rescomp](https://github.com/Stephane-D/SGDK/blob/master/bin/rescomp.txt) - MIT
-  - [Marsdev](https://github.com/andwn/marsdev) - MIT
-  - [Docker Engine](https://docs.docker.com/engine/install/) - Apache 2.0
-- Debug and test:
-  - [BlastEm](https://github.com/libretro/blastem) - GPL-3.0+
-  - [FlashKit software](https://github.com/krikzz/flashkit/) - MIT
-- Content tools:
-  - [LibreSprite](https://libresprite.github.io/) - GPLv2
-  - [GIMP](https://www.gimp.org/downloads/) - GNU GPL
-  - [Blender](https://www.blender.org/download/) - GNU GPL v2+
-  - [Audacity](https://www.audacityteam.org/download/) - GPLv3
-  - [Furnace](https://github.com/tildearrow/furnace/releases) - GPLv2+
+<div class="overview-columns">
+<div>
+
+### Core dev
+- [SGDK](https://github.com/Stephane-D/SGDK) - MIT
+- [rescomp](https://github.com/Stephane-D/SGDK/blob/master/bin/rescomp.txt) - MIT
+- [GCC](https://gcc.gnu.org/) - GPLv3
+- [Marsdev](https://github.com/andwn/marsdev) - MIT
+- [Docker Engine](https://docs.docker.com/engine/install/) - Apache 2.0
+- [My Docker](https://github.com/shawnchivers/schiv-genesis-docker-build) - MIT
+- [VSCodium](https://vscodium.com/) - MIT
+
+&nbsp;
+### Debug and test
+- [GDB](https://www.sourceware.org/gdb/) - GPLv3
+- [BlastEm](https://github.com/libretro/blastem) - GPL-3.0+
+- [FlashKit software](https://github.com/krikzz/flashkit/) - MIT
+
+</div>
+<div>
+
+### Content tools
+- [LibreSprite](https://libresprite.github.io/) - GPLv2
+- [GIMP](https://www.gimp.org/downloads/) - GNU GPL
+- [Blender](https://www.blender.org/download/) - GNU GPL v2+
+- [Audacity](https://www.audacityteam.org/download/) - GPLv3
+- [Furnace](https://github.com/tildearrow/furnace/releases) - GPLv2+
+
+</div>
+</div>
 
 ---
 
