@@ -141,7 +141,7 @@ style: |
 
 ## About this talk
 
-- Fast overview, not a full tutorial
+- Directional, not a full tutorial
 - **Sega Genesis** is a video game console that was sold in North America
 - Examples come from a small demo project built for this talk
 - No one endorses my statements
@@ -170,54 +170,19 @@ style: |
 
 ---
 
-<!-- _class: software-overview -->
-## Software Overview
-
-<div class="overview-columns">
-<div>
-
-### Core dev
-- [SGDK](https://github.com/Stephane-D/SGDK) - MIT
-- [rescomp](https://github.com/Stephane-D/SGDK/blob/master/bin/rescomp.txt) - MIT
-- [GCC](https://gcc.gnu.org/) - GPLv3
-- [Marsdev](https://github.com/andwn/marsdev) - MIT
-- [Docker Engine](https://docs.docker.com/engine/install/) - Apache 2.0
-- [My Docker](https://github.com/shawnchivers/schiv-genesis-docker-build) - MIT
-- [VSCodium](https://vscodium.com/) - MIT
-
-&nbsp;
-### Debug and test
-- [GDB](https://www.sourceware.org/gdb/) - GPLv3
-- [BlastEm](https://github.com/libretro/blastem) - GPL-3.0+
-- [FlashKit software](https://github.com/krikzz/flashkit/) - MIT
-
-</div>
-<div>
-
-### Content tools
-- [LibreSprite](https://libresprite.github.io/) - GPLv2
-- [GIMP](https://www.gimp.org/downloads/) - GNU GPL
-- [Blender](https://www.blender.org/download/) - GNU GPL v2+
-- [Audacity](https://www.audacityteam.org/download/) - GPLv3
-- [Furnace](https://github.com/tildearrow/furnace/releases) - GPLv2+
-
-</div>
-</div>
-
----
 
 ## Genesis Architecture - Detour
 
 - **Motorola 68000** is the main CPU and runs most game code
 - **Zilog Z80** is usually used for audio support and sound driver work
 - The **VDP** handles tiles, planes, sprites, scrolling, and access to VRAM
-- Audio is built from the Yamaha YM2612 FM chip plus the SN76489 PSG
+- Audio is built from the Yamaha YM2612 FM chip plus the TI SN76489 PSG
 - The practical result: code, graphics, and sound are separate jobs that must share tight hardware limits
 
 ---
 
 <!-- _class: arch-diagram -->
-![bg contain](screenshot/genesis-architecture-diagram.svg)
+![bg contain](screenshot/MD-Architecture2.png)
 
 ---
 
@@ -225,28 +190,9 @@ style: |
 
 - **Video Display Processor** - 320x224 or 256x224 resolution (NTSC)
 - **80 sprites on screen** - limit 20 per scanline
-- **64 KB VRAM** - Vertical scroll data
+- **64 KB VRAM** - Video RAM
 - **128 bytes CRAM** - 4 palette x 16 colors (512 color space)
 - **DMA** - fast VRAM fills, copies, and 64K->VRAM transfers
-
----
-
-## Debugging Example
-
-- Typical loop:
-    - build the ROM
-    - run it
-    - step thru code
-    - find the broken sprite, sound, or logic
-    - fix the asset or code and rebuild quickly
-
----
-
-## Run & Debug: BlastEm
-
-- Loading `rom` - instant feedback loop
-- GDB stub for stepping through logic
-- Test on cycle-accurate emulation before real hardware
 
 ---
 
@@ -300,7 +246,7 @@ WAV hitgun_mix_sfx "hitgun_mix.wav" XGM
 
 ---
 
-## Why The `.res` File Matters
+## Ultimate purpose of `.res` File
 
 - It keeps art, maps, and sound in one build step instead of hand-converting files
 - It lets code refer to generated symbols instead of raw files
@@ -337,7 +283,7 @@ while (1)
 ## Marsdev
 
 - [Marsdev](https://github.com/andwn/marsdev) license: MIT
-- Cross-platform toolchain for Mega Drive and 32X work
+- Cross-platform toolchain for **Sega Genesis** and 32X work
 - Good option on Linux
 
 ---
@@ -348,6 +294,25 @@ while (1)
 - Containers make the build environment repeatable across machines
 - Helpful when you want to avoid local toolchain drift
 - [My Docker](https://github.com/shawnchivers/schiv-genesis-docker-build)
+
+---
+
+## Debugging Example
+
+- Typical loop:
+    - build the ROM
+    - run it
+    - step thru code
+    - find the broken sprite, sound, or logic
+    - fix the asset or code and rebuild quickly
+
+---
+
+## Run & Debug: BlastEm
+
+- Loading `rom` - instant feedback loop
+- GDB stub for stepping through logic
+- Test on cycle-accurate emulation before real hardware
 
 ---
 
@@ -411,6 +376,43 @@ while (1)
 <div>
 
 ![FlashKit Programmer MD](screenshot/flashkit.png)
+
+</div>
+</div>
+
+---
+
+
+<!-- _class: software-overview -->
+## Software Overview
+
+<div class="overview-columns">
+<div>
+
+### Core dev
+- [SGDK](https://github.com/Stephane-D/SGDK) - MIT
+- [rescomp](https://github.com/Stephane-D/SGDK/blob/master/bin/rescomp.txt) - MIT
+- [GCC](https://gcc.gnu.org/) - GPLv3
+- [Marsdev](https://github.com/andwn/marsdev) - MIT
+- [Docker Engine](https://docs.docker.com/engine/install/) - Apache 2.0
+- [My Docker](https://github.com/shawnchivers/schiv-genesis-docker-build) - MIT
+- [VSCodium](https://vscodium.com/) - MIT
+
+&nbsp;
+### Debug and test
+- [GDB](https://www.sourceware.org/gdb/) - GPLv3
+- [BlastEm](https://github.com/libretro/blastem) - GPL-3.0+
+- [FlashKit software](https://github.com/krikzz/flashkit/) - MIT
+
+</div>
+<div>
+
+### Content tools
+- [LibreSprite](https://libresprite.github.io/) - GPLv2
+- [GIMP](https://www.gimp.org/downloads/) - GNU GPL
+- [Blender](https://www.blender.org/download/) - GNU GPL v2+
+- [Audacity](https://www.audacityteam.org/download/) - GPLv3
+- [Furnace](https://github.com/tildearrow/furnace/releases) - GPLv2+
 
 </div>
 </div>
