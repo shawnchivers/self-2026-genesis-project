@@ -158,6 +158,18 @@ style: |
 
 ---
 
+
+## Cow Abductors Game
+
+- Small game built for this presentation [here](https://github.com/shawnchivers/cow-abuction)
+- Useful because it touches the whole pipeline:
+    - drawing art
+    - converting assets
+    - compiling code
+    - debugging on hardware or emulators
+
+---
+
 <!-- _class: software-overview -->
 ## Software Overview
 
@@ -216,17 +228,6 @@ style: |
 - **64 KB VRAM** - Vertical scroll data
 - **128 bytes CRAM** - 4 palette x 16 colors (512 color space)
 - **DMA** - fast VRAM fills, copies, and 64K->VRAM transfers
-
----
-
-## Cow Abductors Game
-
-- Small game built for this presentation [here](https://github.com/shawnchivers/cow-abuction)
-- Useful because it touches the whole pipeline:
-    - drawing art
-    - converting assets
-    - compiling code
-    - debugging on hardware or emulators
 
 ---
 
@@ -315,7 +316,7 @@ WAV hitgun_mix_sfx "hitgun_mix.wav" XGM
 - `SPR_addSprite()` - loading ufo & cow sprites in VDP
 - `JOY_readJoypad()` - reading player input each frame
 - `XGM_startPlay()` - triggering music and SFX
-- `SYS_doVBlankProcess()` - syncing everything to 60fps
+- `SYS_doVBlankProcess()` - syncing everything 
 
 ---
 
