@@ -266,16 +266,53 @@ WAV hitgun_mix_sfx "hitgun_mix.wav" XGM
 
 ---
 
-## Main loop
+## Just a Cow
+
+- Example time of just a cow.
+
+---
+
+## Cow RES File
 
 ```text
-while (1)
+SPRITE cow "cow.png" 8 8 NONE 0
+PALETTE cow_pal "cow.png"
+```
+
+---
+
+## Cow C Code
+
+```c
+#include <genesis.h>
+#include "resources.h"
+
+int main(bool hard)
 {
-    // Read input
-    // Update game logic
-    // Queue sprite/VDP changes
-    SYS_doVBlankProcess();   // sync + process SGDK frame work
-}
+  (void) hard;
+
+  VDP_setScreenWidth256();
+  SPR_init();
+  PAL_setPalette(PAL1, cow_pal.data, CPU);
+
+  Sprite *cowSprite = SPR_addSprite(&cow, 104, 72,
+    TILE_ATTR(PAL1, FALSE, FALSE, FALSE));
+
+  SPR_setVisibility(cowSprite, VISIBLE);
+
+  // main loop
+  while (TRUE) {
+
+    if (JOY_readJoypad(JOY_1) & BUTTON_A) {}
+      VDP_drawText("Mu", 10, 10);
+    } else {
+      VDP_clearText(10, 10, 10);
+    }
+
+    SPR_update();
+    SYS_doVBlankProcess();
+  }
+]
 ```
 
 ---
