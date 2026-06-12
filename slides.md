@@ -148,6 +148,16 @@ style: |
 
 ---
 
+## Starting with the end in mind
+
+- A working Genesis game needs:
+    - art: sprites, backgrounds, tiles
+    - sound: effects, music
+    - input handling: gamepad, light gun
+    - game logic
+
+---
+
 <!-- _class: software-overview -->
 ## Software Overview
 
@@ -181,16 +191,6 @@ style: |
 
 </div>
 </div>
-
----
-
-## Starting with the end in mind
-
-- A working Genesis game needs:
-    - art: sprites, backgrounds, tiles
-    - sound: effects, music
-    - input handling: gamepad, light gun
-    - game logic
 
 ---
 
@@ -281,7 +281,6 @@ style: |
 
 ```text
 IMAGE bgrect "back.png" BEST ALL
-
 PALETTE bgrect_pal "back.png"
 
 SPRITE cow "cow.png" 4 8 BEST
@@ -334,43 +333,11 @@ while (1)
 
 ---
 
-## Writing to Everdrive
-
-- Build the ROM (`.bin`) from your SGDK project
-- Copy the ROM to an SD card used by your flash cartridge
-- Insert the flash cartridge into real Genesis / Mega Drive hardware
-- Boot and test for timing, input feel, audio balance, and visual artifacts
-- Repeat quickly: tweak code or assets, rebuild, and re-test on hardware
-- Krikzz version are correctly beveled
-
----
-
-<!-- _class: split-two -->
-## MD Rewriter - Krikzz
-
-<div class="columns">
-<div>
-
-- [FlashKit](https://github.com/krikzz/flashkit/)
-- [Flash Cartridge](https://krikzz.com/our-products/cartridges/flashkitmd.html)
-- [Flasher](https://krikzz.com/our-products/accessories/flashkitmd.html)
-- Krikzz version recommended - AliExpress version exist that support saves on cart
-
-</div>
-<div>
-
-![FlashKit Programmer MD](screenshot/flashkit.png)
-
-</div>
-</div>
-
----
-
 ## Marsdev
 
 - [Marsdev](https://github.com/andwn/marsdev) license: MIT
 - Cross-platform toolchain for Mega Drive and 32X work
-- Good option on Linux, macOS, or WSL when you want a native setup
+- Good option on Linux
 
 ---
 
@@ -414,3 +381,37 @@ while (1)
 - [Furnace](https://github.com/tildearrow/furnace/releases) license: GPLv2 or later
 - Multi-system tracker with strong Sega Genesis / YM2612 support
 - Good choice for music when you want more control than one-shot samples
+
+---
+
+## Writing to Everdrive
+
+- Build the ROM (`.bin`) from your SGDK project
+- Copy the ROM to an SD card used by your flash cartridge
+- Insert the flash cartridge into real Genesis / Mega Drive hardware
+- Boot and test for timing, input feel, audio balance, and visual artifacts
+- Repeat quickly: tweak code or assets, rebuild, and re-test on hardware
+- Krikzz version are correctly beveled
+
+---
+
+<!-- _class: split-two -->
+## MD Rewriter - Krikzz
+
+<div class="columns">
+<div>
+
+- [FlashKit](https://github.com/krikzz/flashkit/)
+- [Flash Cartridge](https://krikzz.com/our-products/cartridges/flashkitmd.html)
+- [Flasher](https://krikzz.com/our-products/accessories/flashkitmd.html)
+- Krikzz version recommended - AliExpress version exist that support saves on cart
+
+</div>
+<div>
+
+![FlashKit Programmer MD](screenshot/flashkit.png)
+
+</div>
+</div>
+
+---
